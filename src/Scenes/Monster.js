@@ -100,7 +100,7 @@ class Monster extends Phaser.Scene {
         my.sprite.mouthFangs.visible = false;
 
         //keyboard input handling
-        this.input.keyboard.on("keydown", (event) => {
+        this.input.keyboard.on("keydown", function (event) {
             if (event.code === "KeyS") {
                 my.sprite.mouthSmile.visible = true;
                 my.sprite.mouthFangs.visible = false;
