@@ -97,6 +97,7 @@ class Monster extends Phaser.Scene {
         my.sprite.mouthFangs = this.add.sprite(this.mouthFangsX, this.mouthFangsY, "monsterParts", "mouthJ.png");
         my.sprite.mouthFangs.visible = false;
 
+        //keyboard input handling
         this.input.keyboard.on("keydown", (event) => {
             if (event.code === "KeyS") {
                 my.sprite.mouthSmile.visible = true;
@@ -107,19 +108,18 @@ class Monster extends Phaser.Scene {
             };
             if (event.code === "KeyA") {
                 for (let part in my.sprite) {
-                    console.log(part);
+                    my.sprite[part].x -= 10;
                 }
             }
             if (event.code === "KeyD") {
-                console.log(this.bodyX);
-                this.bodyX += 50;
-                console.log(this.bodyX);
+                for (let part in my.sprite) {
+                    my.sprite[part].x += 10;
+                }
             }
         });
     }
 
     update() {
         let my = this.my;    // create an alias to this.my for readability
-        
     }
 }
