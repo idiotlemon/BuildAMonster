@@ -21,13 +21,14 @@ class Monster extends Phaser.Scene {
         this.leftArmX = this.bodyX - 80;
         this.leftArmY = this.bodyY + 40;
 
-        //head accessories
+        //ears
         this.rightEarX = this.bodyX + 50;
         this.rightEarY = this.bodyY - 100;
 
         this.leftEarX = this.bodyX - 50;
         this.leftEarY = this.bodyY - 100;
 
+        //nose
         this.noseX = this.bodyX;
         this.noseY = this.bodyY - 10;
 
@@ -80,11 +81,12 @@ class Monster extends Phaser.Scene {
         my.sprite.leftArm = this.add.sprite(this.leftArmX, this.leftArmY, "monsterParts", "arm_yellowE.png");
         my.sprite.leftArm.flipX = true;
 
-        //head accessories sprites
+        //ear sprites
         my.sprite.rightEar = this.add.sprite(this.rightEarX, this.rightEarY, "monsterParts", "detail_dark_ear.png");
         my.sprite.leftEar = this.add.sprite(this.leftEarX, this.leftEarY, "monsterParts", "detail_green_horn_large.png");
         my.sprite.leftEar.flipX = true;
 
+        //nose sprite
         my.sprite.nose = this.add.sprite(this.noseX, this.noseY, "monsterParts", "nose_yellow.png");
 
         //eye sprites
@@ -108,12 +110,12 @@ class Monster extends Phaser.Scene {
             };
             if (event.code === "KeyA") {
                 for (let part in my.sprite) {
-                    my.sprite[part].x -= 10;
+                    my.sprite[part].x -= 5;
                 }
             }
             if (event.code === "KeyD") {
                 for (let part in my.sprite) {
-                    my.sprite[part].x += 10;
+                    my.sprite[part].x += 5;
                 }
             }
         });
